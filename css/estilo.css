@@ -60,3 +60,25 @@
 .slider__arrow:nth-of-type(2){
     justify-self: end;
 }
+
+@media only screen and (max-width: 590px) {
+
+	.slider__img {
+		max-width: 100px;
+        max-height: 100px;
+	}
+
+    .slider__text	{
+		font-size: 13px;
+	}
+    .subtitle{
+        display: none;
+    }
+.container{
+	width: 100%;
+}
+
+.slider__body{
+	display: block;
+} 
+}

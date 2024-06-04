@@ -39,7 +39,7 @@
  display: grid;
  align-items: center;
 align-content: center;
-height: 87vh;
+height: 86vh;
 padding-top: 40px;
 padding-left: 25px;
 padding-right: 25px;
@@ -52,7 +52,7 @@ text-align: center;
 }
 
 .imgContent img{
- width: 250px;
+ max-width: 250px;
  display: grid;
  align-items: center;
  justify-items: center;
@@ -62,7 +62,7 @@ text-align: center;
 .sotialNetwork{
 	display: flex;
 justify-content: space-evenly;
-width: 98vw;
+width: 100vw;
 font-size: clamp(3vw, 1em, 1.5em);
 background:#db0a0a;
 }
@@ -280,4 +280,60 @@ h2 {
 	.nav-close-btn span {
 		background:#000;
 	}
+}
+
+
+@media only screen and (max-width: 750px) {
+
+	.imgContent img{
+		max-width: 180px;
+	}
+
+	#subtitle{
+		font-size: medium;
+	}
+
+	.borderTop svg{
+    max-width: 180px;
+				max-height: 180px;
+
+	}
+
+}
+@media only screen and (max-width: 540px) {
+
+	.imgContent img{
+		max-width: 130px;
+	}
+
+	#subtitle{
+		font-size: small;
+	}
+}
+
+@media only screen and (max-width: 444px) {
+
+	h2{
+		display: none;
+	}
+
+}
+
+@media only screen and (max-width: 350px) {
+ 
+	.borderTop svg{
+		max-width: 120px;
+		max-height: 120px;
+}
+ 
+.borderBottom{
+	display: none;
+}
+
+#home{
+
+	height: 93vh;
+
+}
+
 }
