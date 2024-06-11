@@ -13,6 +13,10 @@
 	color:#f1f1f1;
 } 
 
+#darkBar{
+	background: linear-gradient(to right, #000, rgba(255, 0, 0, 0.753));
+}
+
 .darkMode{
  background: linear-gradient(to right, rgba(255, 0, 0, 0.753), #000);
 	color:#f1f1f1;
@@ -277,7 +281,40 @@ h2 {
 		background: linear-gradient(to right, rgba(255, 0, 0, 0.753), white);
 	}
 
+.progress p{
+	margin-left: 3px;
+	height: auto;
+}
 
+.progress-bar__item {
+	border-radius: inherit;
+	height: inherit;
+	background: red;
+	width: 30%; /* cambiando el ancho hacemos que esté más o menos llena la barra de progreso */
+}
+
+.progress{
+	width:80vw;
+	height: 40px;
+	background: linear-gradient(to right,  white, rgba(255, 0, 0, 0.753));
+	border-radius: 100px;
+	margin: 3px;
+	padding: 5px;
+}
+
+.progress__bar{
+	
+	height: 100%;
+	background: #db0a0a;
+	border-radius: 50px;
+}
+
+.progressBar{
+	text-align: center;
+	display: grid;
+	justify-content: end;
+	align-content: end;
+}
 
 @media only screen and (max-width: 750px) {
 
@@ -331,5 +368,6 @@ h2 {
 	height: 93vh;
 
 }
+
 
 }

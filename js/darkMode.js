@@ -8,7 +8,7 @@ const iElements = document.querySelectorAll('i'); // Selecciona todos los elemen
 const pathElements = document.querySelectorAll('svg path'); // Selecciona todos los elementos <path> dentro de <svg>
 const nav = document.querySelector('nav');
 const aElements = document.querySelectorAll('a');
-
+const articleElements = document.querySelectorAll('article');
 // Recupera la preferencia del usuario al cargar la página
 const savedDarkMode = localStorage.getItem('darkMode');
 if (savedDarkMode === 'true') {
@@ -17,7 +17,6 @@ if (savedDarkMode === 'true') {
     h1.classList.add('darkFont');
     p.classList.add('darkFont');
     nav.classList.add('darkMode');
-
     spans.forEach(span => {
         span.id = 'darkFontSpam'; // Asigna el nuevo ID a cada <span>
     });
@@ -34,6 +33,10 @@ if (savedDarkMode === 'true') {
         a.id = 'darkFont'; // Asigna el nuevo ID a cada <i>
     });
 
+    articleElements.forEach(article => {
+        article.id = 'darkBar'; // Asigna el nuevo ID a cada <i>
+    });
+
     toggleButton.innerHTML = '<i class="fa-solid fa-moon"></i>';
 } else {
     toggleButton.innerHTML = '<i class="fa-solid fa-sun"></i>';
@@ -45,6 +48,7 @@ toggleButton.addEventListener('click', () => {
     h1.classList.toggle('darkFont');
     p.classList.toggle('darkFont');
     nav.classList.toggle('darkMode');
+    body.classList.toggle('darkBar');
     // Cambia el icono del botón según el modo actual
     toggleButton.innerHTML = home.classList.contains('darkMode') ? '<i class="fa-solid fa-moon"></i>' : '<i class="fa-solid fa-sun"></i>';
 
@@ -62,6 +66,9 @@ toggleButton.addEventListener('click', () => {
         aElements.forEach(a => {
             a.id = 'darkFont'; // Asigna el ID a cada <i> si está activado
         });
+        articleElements.forEach(article => {
+            article.id = 'darkBar'; // Asigna el ID a cada <i> si está activado
+        });
     } else {
         spans.forEach(span => {
             span.removeAttribute('id'); // Elimina el ID de cada <span> si está desactivado
@@ -75,6 +82,9 @@ toggleButton.addEventListener('click', () => {
         aElements.forEach(a => {
             a.removeAttribute('id'); // Elimina el ID de cada <i> si está desactivado
         });
+        articleElements.forEach(article => {
+            article.removeAttribute('id'); // Elimina el ID de cada <i> si está desactivado
+        });
     }
 
     // Guarda la preferencia en LocalStorage
@@ -85,6 +95,7 @@ toggleButton.addEventListener('click', () => {
     localStorage.setItem('darkFont', iElements[0].id); // Asigna o elimina el ID actual (tomando el primer <i>)
     localStorage.setItem('white', pathElements[0].getAttribute('fill')); // Asigna o elimina el fill actual (tomando el primer <path>)
     localStorage.setItem('darkFont', nav.classList.contains('darkFont'));
-    localStorage.setItem('darkFont', aElements[0].id); // Asigna o elimina el ID actual (tomando el primer <i>)
-    
+    localStorage.setItem('darkFont', aElements[0].id); // Asigna o elimina el ID actual (tomando el primer <i>)        
+    localStorage.setItem('darkBar', articleElements[0].id); // Asigna o elimina el ID actual (tomando el primer <i>)            localStorage.setItem('darBar', home.classList.contains('darBar'));
+
 });
